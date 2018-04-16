@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.LANG_RU_TRANS = {
+    'time picker': 'Выбор Времени',
+    'today': 'Сегодня',
+    'set time': 'Установить Время',
+    'close': 'Закрыть',
+    'confirm': 'Подтвердить',
+    'hour': 'Час',
+    'minute': 'Минута',
+    'second': 'Секунда',
+};
+//# sourceMappingURL=ru.js.map

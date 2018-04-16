@@ -1,0 +1,27 @@
+import { ElementRef, ViewContainerRef, EventEmitter, OnInit, OnChanges, SimpleChanges, ComponentFactoryResolver } from '@angular/core';
+export declare class DateTimePickerDirective implements OnInit, OnChanges {
+    private vcRef;
+    private componentFactoryResolver;
+    private el;
+    dateTimePicker: any;
+    dateTimePickerChange: EventEmitter<any>;
+    locale: string;
+    viewFormat: string;
+    returnObject: string;
+    mode: 'popup' | 'dropdown' | 'inline';
+    hourTime: '12' | '24';
+    theme: string;
+    position: 'top' | 'right' | 'bottom' | 'left';
+    positionOffset: string;
+    pickerType: 'both' | 'date' | 'time';
+    showSeconds: boolean;
+    onlyCurrent: boolean;
+    private created;
+    private dialog;
+    constructor(vcRef: ViewContainerRef, componentFactoryResolver: ComponentFactoryResolver, el: ElementRef);
+    ngOnChanges(changes: SimpleChanges): void;
+    ngOnInit(): void;
+    onClick(): void;
+    momentChanged(value: any): void;
+    private openDialog();
+}
