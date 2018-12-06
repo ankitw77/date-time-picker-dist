@@ -16,6 +16,7 @@ export declare class DialogComponent implements OnInit, OnDestroy {
     returnObject: string;
     dialogType: DialogType;
     pickerType: 'both' | 'date' | 'time';
+    autoCloseOnDateSelect: boolean;
     private subId;
     private momentFunc;
     constructor(el: ElementRef, translate: TranslateService, service: PickerService);
@@ -25,7 +26,7 @@ export declare class DialogComponent implements OnInit, OnDestroy {
     setSelectedMoment(moment: any): void;
     cancelDialog(): void;
     setInitialMoment(value: any): void;
-    setDialog(instance: any, elementRef: ElementRef, initialValue: any, dtLocale: string, dtViewFormat: string, dtReturnObject: string, dtPosition: 'top' | 'right' | 'bottom' | 'left', dtPositionOffset: string, dtMode: 'popup' | 'dropdown' | 'inline', dtHourTime: '12' | '24', dtTheme: string, dtPickerType: 'both' | 'date' | 'time', dtShowSeconds: boolean, dtOnlyCurrent: boolean): void;
+    setDialog(instance: any, elementRef: ElementRef, initialValue: any, dtLocale: string, dtViewFormat: string, dtReturnObject: string, dtPosition: 'top' | 'right' | 'bottom' | 'left', dtPositionOffset: string, dtMode: 'popup' | 'dropdown' | 'inline', dtHourTime: '12' | '24', dtTheme: string, dtPickerType: 'both' | 'date' | 'time', dtShowSeconds: boolean, dtOnlyCurrent: boolean, autoCloseOnDateSelect: boolean): void;
     confirm(close: boolean): void;
     toggleDialogType(type: DialogType): void;
     setDate(moment: Moment): void;

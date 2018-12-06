@@ -19,6 +19,7 @@ var DateTimePickerDirective = (function () {
         this.pickerType = 'both';
         this.showSeconds = false;
         this.onlyCurrent = false;
+        this.autoCloseOnDateSelect = false;
         this.created = false;
     }
     DateTimePickerDirective.prototype.ngOnChanges = function (changes) {
@@ -45,7 +46,7 @@ var DateTimePickerDirective = (function () {
             var factory = this.componentFactoryResolver.resolveComponentFactory(dialog_component_1.DialogComponent);
             var injector = core_1.ReflectiveInjector.fromResolvedProviders([], this.vcRef.parentInjector);
             var cmpRef = this.vcRef.createComponent(factory, 0, injector, []);
-            cmpRef.instance.setDialog(this, this.el, this.dateTimePicker, this.locale, this.viewFormat, this.returnObject, this.position, this.positionOffset, this.mode, this.hourTime, this.theme, this.pickerType, this.showSeconds, this.onlyCurrent);
+            cmpRef.instance.setDialog(this, this.el, this.dateTimePicker, this.locale, this.viewFormat, this.returnObject, this.position, this.positionOffset, this.mode, this.hourTime, this.theme, this.pickerType, this.showSeconds, this.onlyCurrent, this.autoCloseOnDateSelect);
             this.dialog = cmpRef.instance;
         }
         else if (this.dialog) {
@@ -81,6 +82,7 @@ DateTimePickerDirective.propDecorators = {
     'pickerType': [{ type: core_1.Input },],
     'showSeconds': [{ type: core_1.Input },],
     'onlyCurrent': [{ type: core_1.Input },],
+    'autoCloseOnDateSelect': [{ type: core_1.Input },],
 };
 exports.DateTimePickerDirective = DateTimePickerDirective;
 //# sourceMappingURL=picker.directive.js.map

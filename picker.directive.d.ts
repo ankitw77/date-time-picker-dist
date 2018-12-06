@@ -16,6 +16,7 @@ export declare class DateTimePickerDirective implements OnInit, OnChanges {
     pickerType: 'both' | 'date' | 'time';
     showSeconds: boolean;
     onlyCurrent: boolean;
+    autoCloseOnDateSelect: boolean;
     private created;
     private dialog;
     constructor(vcRef: ViewContainerRef, componentFactoryResolver: ComponentFactoryResolver, el: ElementRef);

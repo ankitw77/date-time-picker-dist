@@ -47,10 +47,11 @@ var DialogComponent = (function () {
     DialogComponent.prototype.setInitialMoment = function (value) {
         this.initialValue = value;
     };
-    DialogComponent.prototype.setDialog = function (instance, elementRef, initialValue, dtLocale, dtViewFormat, dtReturnObject, dtPosition, dtPositionOffset, dtMode, dtHourTime, dtTheme, dtPickerType, dtShowSeconds, dtOnlyCurrent) {
+    DialogComponent.prototype.setDialog = function (instance, elementRef, initialValue, dtLocale, dtViewFormat, dtReturnObject, dtPosition, dtPositionOffset, dtMode, dtHourTime, dtTheme, dtPickerType, dtShowSeconds, dtOnlyCurrent, autoCloseOnDateSelect) {
         this.directiveInstance = instance;
         this.directiveElementRef = elementRef;
         this.initialValue = initialValue;
+        this.autoCloseOnDateSelect = autoCloseOnDateSelect;
         this.service.setPickerOptions(dtLocale, dtViewFormat, dtReturnObject, dtPosition, dtPositionOffset, dtMode, dtHourTime, dtTheme, dtPickerType, dtShowSeconds, dtOnlyCurrent);
     };
     DialogComponent.prototype.confirm = function (close) {
@@ -72,7 +73,7 @@ var DialogComponent = (function () {
     };
     DialogComponent.prototype.setDate = function (moment) {
         this.service.setDate(moment);
-        this.confirm(false);
+        this.confirm(!!this.autoCloseOnDateSelect);
     };
     DialogComponent.prototype.setTime = function (time) {
         this.service.setTime(time.hour, time.min, time.sec, time.meridian);
